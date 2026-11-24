@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Practical</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background: #f1f1f1;
+      }
+
+      .layout {
+        max-width: 900px;
+        margin: 0 auto 40px;
+        height: 400px;
+      }
+
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        border: 3px solid white;
+      }
+
+      /* FLEXBOX VERSION */
+      .flex-layout {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .flex-header {
+        height: 70px;
+        background: #2563eb;
+      }
+
+      .flex-content {
+        display: flex;
+        flex: 1;
+      }
+
+      .flex-nav {
+        flex: 1;
+        background: #0d9488;
+      }
+
+      .flex-main {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .flex-welcome {
+        flex: 1;
+        background: #d97706;
+      }
+
+      .flex-login {
+        flex: 2;
+        background: #7c3aed;
+      }
+
+      .flex-ads {
+        flex: 1;
+        background: #db2777;
+      }
+
+      .flex-footer {
+        height: 60px;
+        background: #475569;
+      }
+
+      /* GRID VERSION */
+      .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 70px 1fr 60px;
+        grid-template-areas:
+          "header header header"
+          "nav welcome ads"
+          "nav login ads"
+          "footer footer footer";
+        grid-template-rows: 70px 1fr 1fr 60px;
+        height: 400px;
+      }
+
+      .grid-header {
+        grid-area: header;
+        background: #2563eb;
+      }
+
+      .grid-nav {
+        grid-area: nav;
+        background: #0d9488;
+      }
+
+      .grid-welcome {
+        grid-area: welcome;
+        background: #d97706;
+      }
+
+      .grid-login {
+        grid-area: login;
+        background: #7c3aed;
+      }
+
+      .grid-ads {
+        grid-area: ads;
+        background: #db2777;
+      }
+
+      .grid-footer {
+        grid-area: footer;
+        background: #475569;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- FLEXBOX -->
+    <div class="layout flex-layout">
+      <div class="box flex-header">A</div>
+
+      <div class="flex-content">
+        <div class="box flex-nav">B</div>
+
+        <div class="flex-main">
+          <div class="box flex-welcome">C</div>
+          <div class="box flex-login">D</div>
+        </div>
+
+        <div class="box flex-ads">E</div>
+      </div>
+
+      <div class="box flex-footer">F</div>
+    </div>
+
+    <!-- CSS GRID -->
+    <div class="layout grid-layout">
+      <div class="box grid-header">A</div>
+      <div class="box grid-nav">B</div>
+      <div class="box grid-welcome">C</div>
+      <div class="box grid-login">D</div>
+      <div class="box grid-ads">E</div>
+      <div class="box grid-footer">F</div>
+    </div>
+  </body>
+</html>
